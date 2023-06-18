@@ -1,3 +1,8 @@
-From tomcat:8-jre8 
+FROM ubuntu:latest
 
-COPY ./target/hello-world-1.0-SNAPSHOT.war /usr/local/tomcat/webapps
+RUN apt update && apt install -y --no-install-recommends \
+    git \
+    wget \
+    openjdk-11-jdk \
+    gradle \
+    && rm -rf /var/lib/apt/lists/*
